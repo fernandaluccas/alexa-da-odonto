@@ -43,7 +43,7 @@ A *protocol* is a ready-made medication entry, such as "standard amoxicillin", t
 ## 5. Appointments and voice
 
 - **BR-23.** An appointment links one patient and one dentist, on a given day and time. Prescriptions and terms belong to an appointment.
-- **BR-24.** The clinic assistant builds the list of the day's patients. The dentist marks a patient as **in appointment** when calling them in, before putting gloves on.
+- **BR-24.** The clinic assistant books appointments in the schedule, and the day's list is built from it, with each appointment already linked to its patient. The dentist marks a patient as **in appointment** when calling them in, before putting gloves on.
 - **BR-25.** The assistant always works on the patient currently in appointment. If nobody is in appointment, it says so and creates nothing.
 - **BR-26.** Finishing the appointment clears that state, so documents never end up on the previous patient's record.
 - **BR-27.** Voice requests only choose between things the app already knows (protocols, term types). They are not free-form dictation.
@@ -57,6 +57,14 @@ A *protocol* is a ready-made medication entry, such as "standard amoxicillin", t
 - **BR-32.** Listening only starts through an explicit trigger. The app does not record the clinic continuously.
 - **BR-33.** Documents and patient records are kept for a long time, so storage must be reliable and protected.
 
+## 7. Schedule
+
+- **BR-34.** The schedule holds appointments. Each one has a patient, a dentist, a date, a time and a status (for example: scheduled, in appointment, done, cancelled).
+- **BR-35.** Booking an appointment links it to a registered patient, so nobody has to identify the patient again on the day.
+- **BR-36.** An appointment can be rescheduled by changing its date and time. It stays linked to the same patient.
+- **BR-37.** A cancelled appointment is marked as cancelled, not deleted.
+- **BR-38.** The first version includes only this basic schedule. Reminders and confirmation messages to patients are left for later.
+
 ## Open questions
 
 1. **Clinic header.** The dentist's name, council number (CRO) and clinic address appear on every document. Who sets them up, and where?
@@ -65,3 +73,4 @@ A *protocol* is a ready-made medication entry, such as "standard amoxicillin", t
 4. **Medical certificates.** Do they belong in the first version or later?
 5. **Number of dentists.** The data model already has a dentist table. Is the app for a single clinic with several dentists, or for many independent dentists, each with their own library and patients?
 6. **Procedure notes.** Should an appointment also record what was done? It would be a free-text field on the appointment, but it is not part of the first version.
+7. **Schedule conflicts.** If two patients are booked at the same time with the same dentist, should the app block it or only warn?
