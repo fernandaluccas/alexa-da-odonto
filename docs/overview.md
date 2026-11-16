@@ -45,7 +45,7 @@ Other specialties are planned for later.
 
 ## What it is not
 
-- **Not a full clinic management system.** A fuller system with scheduling and patient messages may come much later.
+- **Not a full clinic management system.** It includes a basic schedule, but features such as patient messages and reminders may come much later.
 - **Not clinical decision support.** The assistant does not recommend treatments or medications. The dentist is responsible for everything in the library.
 - **Not a replacement for professional judgment** or for the legal requirements that apply to prescriptions and signatures.
 
