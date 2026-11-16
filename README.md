@@ -1,4 +1,3 @@
-
 # Dental Voice Assistant
 
 > **Status: early design phase.** There is no working code yet. This repository currently documents the idea, the business rules and the planned database design. Everything described here is **planned, not implemented**.
@@ -17,13 +16,13 @@ The dentist is usually wearing gloves and in the middle of a procedure. If using
 
 ## Planned scope: first version
 
-- Patient records and a simple list of the day's patients (not a full scheduling system)
+- Patient records and a basic schedule: book appointments, see the day's patients, reschedule and cancel. Each appointment is already linked to its patient
 - A library of medication protocols per specialty, starting with implant surgery prescriptions, reviewed and accepted by each dentist
 - Prescriptions (simple and controlled) with one or more medications
 - Prosthesis try-in and acceptance forms (approved / approved with adjustments / not approved)
 - PDF generation and printing, with paper signatures
 
-**Not in the first version:** digital signatures, other specialties, patient messaging, full scheduling, and other documents such as medical certificates.
+**Not in the first version:** digital signatures, other specialties, patient messaging and reminders, advanced scheduling features, and other documents such as medical certificates.
 
 ## Design principles
 
@@ -36,7 +35,7 @@ The dentist is usually wearing gloves and in the middle of a procedure. If using
 
 ## How it will work (planned)
 
-1. The clinic assistant builds the list of the day's patients.
+1. The clinic assistant books appointments in the schedule, and the day's patients are listed from it.
 2. The dentist calls the patient and marks them as "in appointment".
 3. During the appointment, the dentist asks for documents by voice, choosing from known protocols and templates.
 4. The assistant reads back what it understood, and the dentist confirms.
@@ -75,7 +74,7 @@ Identifiers in the actual schema may be in Portuguese.
 - [ ] MySQL schema
 - [ ] Document generator (PDF prescriptions and terms)
 - [ ] Voice command prototype
-- [ ] Mobile app and daily patient list
+- [ ] Mobile app and basic schedule
 - [ ] Later: digital signatures, other specialties, patient messaging
 
 ## Privacy and safety
